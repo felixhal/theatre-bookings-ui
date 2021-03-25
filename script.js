@@ -14,6 +14,13 @@ const updateSelectedCount = () => {
   total.innerText = selectedSeatsCount * ticketPrice;
 };
 
+//Movie Select Event
+movieSelect.addEventListener('change', (e) => {
+  ticketPrice = +e.target.value;
+  updateSelectedCount();
+});
+
+//Seat Click Event
 container.addEventListener('click', (e) => {
   if (
     e.target.classList.contains('seat') &&
