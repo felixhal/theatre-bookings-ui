@@ -5,6 +5,10 @@ const total = document.getElementById('total');
 const movieSelect = document.getElementById('movie');
 
 const ticketPrice = ParseInt(movieSelect.value);
+const setMovieData = (movieIndex, moviePrice) => {
+  localStorage.setItem('selectedMovieIndex', movieIndex);
+  localStorage.setItem('selectedMoviePrice', moviePrice);
+};
 
 const updateSelectedCount = () => {
   const selectedSeats = document.querySelectorAll('.row . seat.selected');
@@ -23,6 +27,7 @@ const updateSelectedCount = () => {
 //Movie Select Event
 movieSelect.addEventListener('change', (e) => {
   ticketPrice = +e.target.value;
+  setMovieData(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
 });
 
