@@ -8,6 +8,12 @@ const ticketPrice = ParseInt(movieSelect.value);
 
 const updateSelectedCount = () => {
   const selectedSeats = document.querySelectorAll('.row . seat.selected');
+  //Copy selected seats into array
+  const seatIndex = [...selectedSeats].map((item) => {
+    return [...seat].indexOf(seat);
+  });
+  //Map trhoguh array
+  //Return new array with index
   const selectedSeatsCount = selectedSeats.length;
 
   count.innerText = selectedSeatsCount;
