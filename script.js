@@ -12,8 +12,8 @@ const updateSelectedCount = () => {
   const seatIndex = [...selectedSeats].map((item) => {
     return [...seat].indexOf(seat);
   });
-  //Map trhoguh array
-  //Return new array with index
+
+  localStorage.setItem('selectedSeats', JSON.stringify(seatIndex));
   const selectedSeatsCount = selectedSeats.length;
 
   count.innerText = selectedSeatsCount;
